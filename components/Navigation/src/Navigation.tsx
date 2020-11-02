@@ -19,6 +19,11 @@ const renderPages = pages.map((page) =>
         <StyledWrapper className={ className ? className : '' }>
             <nav>
                 <div className="navigation-menu">
+                <div className="navigation-menu--link">
+                    <Link href="/" as={`/`}>
+                        <a>Home</a>
+                    </Link>
+                </div>
                     { renderPages }
                 </div>
             </nav>

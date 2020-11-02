@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Navigation from '../components/Navigation/src/Navigation';
+import styled, { css } from 'styled-components';
 
 const { CONTENT_API_KEY, BLOG_URL } = process.env;
 
 type Page = {
     title: string;
     slug: string;
-    html: string;
+    html?: string;
 }
 
 interface PageProps {
@@ -64,13 +65,34 @@ const Page: React.FC<PageProps> = (props) => {
     return (
         <div>
             <Navigation pages={ pages } />
-            <Link href="/">
-                <a>Go Back</a>
-            </Link>
-            <h1>{ page.title }</h1>
-            <div dangerouslySetInnerHTML={ {__html: page.html} }></div>
+            <StyledWrapper>
+                <div className="page-wrapper">
+                    <Link href="/">
+                        <a>Go Back</a>
+                    </Link>
+                    <h1>{ page.title }</h1>
+                    <div dangerouslySetInnerHTML={ {__html: page.html} }></div>
+                </div>
+            </StyledWrapper>
+            
         </div>
     )
 }
+
+const PageStyles = css`
+    .page-wrapper {
+        padding: 20px 40px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        max-width: 800px;
+    }
+`;
+
+const StyledWrapper = styled.div<{className: string }>`
+ ${ PageStyles }
+`;
 
 export default Page;
