@@ -43,7 +43,7 @@ const Article: React.FC<{article: Article}> = (props) => {
     const router = useRouter();
 
     if (router.isFallback) {
-        return <h1>Loading...</h1>
+        return <h1>Loading Article...</h1>
     }
 
     return (

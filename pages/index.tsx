@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head'
 import Link from 'next/link';
 import Navigation from '../components/Navigation/src/Navigation';
@@ -52,8 +53,8 @@ const Home:React.FC<HomepageProps> = (props) => {
   const { posts, pages } = props;
   
   return (
-    <div>
-      <Navigation pages={ pages }/>
+    <React.Fragment>
+      <Navigation pages={ pages } />
       <h1>Hello to my blog</h1>
       <ul>
         {posts.map((post, index) => {
@@ -64,7 +65,7 @@ const Home:React.FC<HomepageProps> = (props) => {
             </li>
         })}
       </ul>
-    </div>
+    </React.Fragment>
   )
 }
 

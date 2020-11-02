@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
+
 interface NavigationProps {
     pages: any;
     className?: string;
@@ -26,26 +27,24 @@ const renderPages = pages.map((page) =>
 }
 
 const NavigationStyles = css`
-    &{
-        nav {
-            width: 100%;
-            height: 64px;
-            background: #111111;
-        }
+    nav {
+        width: 100%;
+        height: 64px;
+        background: #111111;
+    }
         
-        .navigation-menu {
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-        }
+    .navigation-menu {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
 
-        .navigation-menu--link {
-            font-size: 18px;
-            display: flex;
-            margin: 0 10px;
-            color: var(--white);
-        }
+    .navigation-menu--link {
+        font-size: 18px;
+        display: flex;
+        margin: 0 10px;
+        color: var(--white);
     }
 `;
 
