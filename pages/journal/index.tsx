@@ -10,6 +10,7 @@ const { CONTENT_API_KEY, BLOG_URL } = process.env;
 type Post = {
   title: string;
   slug: string;
+  meta_title?: string;
 }
 
 type Page = {
@@ -81,7 +82,6 @@ export const getStaticProps = async ({ params }) => {
 const Home:React.FC<JournalProps> = (props) => {
   const { posts, pages } = props;
   const pageData:Page = pages.find(obj => { return obj.slug === 'the-digital-journal' || ''});
-  console.log(pageData)
   return (
     <React.Fragment>
       <Head>
