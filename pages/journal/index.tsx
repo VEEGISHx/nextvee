@@ -10,6 +10,7 @@ const { CONTENT_API_KEY, BLOG_URL } = process.env;
 type Post = {
   title: string;
   slug: string;
+  meta_title?: string;
 }
 
 type Page = {
