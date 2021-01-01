@@ -95,6 +95,20 @@ const PageStyles = css`
     height: 100%;
     max-width: 800px;
   }
+  p {
+    a:hover {
+      background: yellow;
+      border: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid black;
+      line-height: 0.1;
+    }
+  }
 `;
 
 const StyledWrapper = styled.div<{ className: string }>`
